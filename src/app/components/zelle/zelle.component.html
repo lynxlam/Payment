@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="col-sm" align="center">
+    <img src="../../assets/img/zelle.png" class="rounded" alt="Responsive image" style="width:50%">
+    <br><br>
+  </div>
+  <p style="background-color: pink">{{invalidMessage}}</p>
+  <form [formGroup]="paymentForm" (ngSubmit)="onSubmit(paymentForm)" novalidate>
+    <div class="form-group">
+      <div class="row">
+        <div class="input-group ">
+          <select class="input-group-addon form-control col-4" id="type" formControlName="type" autocomplete="type" type>
+            <option value="" disabled selected>Choose...</option>
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+          </select>
+          <input class="form-control col-8" id="alias" formControlName="alias" type="text" autocomplete="alias" alias/>
+        </div>
+      </div>
+    </div>
+    <div align="center">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      &nbsp;&nbsp;&nbsp;
+      <button class="btn btn-primary" routerLink="">Cancel</button>
+    </div>
+  </form>
+</div>

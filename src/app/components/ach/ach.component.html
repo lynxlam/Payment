@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="col-sm" align="center">
+    <img src="../../assets/img/ach.png" class="rounded" alt="Responsive image" style="width:50%">
+    <br><br>
+  </div>
+  <p style="background-color: pink">{{invalidMessage}}</p>
+  <form [formGroup]="paymentForm" (ngSubmit)="onSubmit(paymentForm)" novalidate>
+    <div class="form-group">
+      <label>Routing Number</label><br>
+      <input class="form-control" id="rtn" formControlName="rtn" type="tel" autocomplete="rtn" rtn/>
+    </div>
+    <div class="form-group">
+      <label>Account Number</label><br>
+      <input class="form-control" id="accountNumber" formControlName="accountNumber" type="tel" autocomplete="accountNumber" accountNumber/>
+    </div>
+    <div align="center">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      &nbsp;&nbsp;&nbsp;
+      <button class="btn btn-primary" routerLink="">Cancel</button>
+    </div>
+  </form>
+</div>

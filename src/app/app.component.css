@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+.font-icon-circle {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  text-align: center;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #041C6C;
+  border-color: transparent;
+}
+
+.btn-secondary:hover {
+  color: white;
+  background-color: #041C6C;
+  border-color: #041C6C;
+}
+
+.btn-primary {
+  background-color: #041C6C;
+  border-color: #041C6C;
+  display: inline;
+}
+
+.btn-link {
+  padding-left: 0px;
+  paddint-right: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 0px;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: #041C6C;
+  border-color: #041C6C;
+}
+
+.jumbotron {
+  padding-top: 50px !important;
+  padding-bottom: 40px !important;
+  box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.65);
+}
+
+/****************************************************************/
+
+.btn-link, .btn-link:hover, .btn-link:active, .btn-link:visited {
+  color: #041C6C !important;
+}
+
+/* .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:visited {
+  background-color: #041C6C !important;
+  border-color: #041C6C !important;
+} */
+
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+.header {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+/* Full-width input fields */
+.inputfield {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.inputfield:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #fab1a0;
+  float: left;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 12px;
+  width :100%
+}
+.tab b {
+  padding-right: 16px;
+}
+.tab span{
+  float: right;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 20px;
+}
+
+textarea {
+  height : 120px;
+}
+/* Set a style for the submit button */
+.trfbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 10px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+  float: right;
+}
+
+.trfbtn:hover {
+  opacity: 1;
+}
+
+.resetbtn {
+  background-color: grey;
+}
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
