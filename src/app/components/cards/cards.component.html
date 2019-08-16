@@ -3,6 +3,7 @@
   <div class="col-sm" align="center">
     <img src="assets/img/cards-horizontal.png" class="rounded" alt="Responsive image" style="width:75%">
     <br><br>
+    <p class="lead"><strong>Your Balance: ${{value}}</strong></p>
   </div>
   <form [formGroup]="paymentForm" (ngSubmit)="onSubmit(paymentForm)" novalidate>
     <p style="background-color: pink">{{invalidMessage}}</p>
@@ -16,7 +17,7 @@
     </div>
     <div class="form-group">
       <label>Expiration Date</label><br>
-      <input class="form-control" id="cc-exp-date" formControlName="expirationDate" type="tel" autocomplete="cc-exp" ccExp/>
+      <input class="form-control" id="cc-exp-date" formControlName="expirationDate" placeholder="MM/YYYY" type="tel" autocomplete="cc-exp" ccExp/>
     </div>
     <div class="form-group">
       <label>CVC</label><br>

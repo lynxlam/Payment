@@ -15,7 +15,8 @@ export class AchComponent implements OnInit {
   status = '';
   api = '';
   invalidMessage = '';
-  
+  value = window.history.state.data;
+
   constructor(private _fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
@@ -31,7 +32,8 @@ export class AchComponent implements OnInit {
     if (form.valid){
       this.router.navigate(['/confirm']);
       this.api = JSON.stringify({ "rtn": this.paymentForm.value.rtn, "accountNumber": this.paymentForm.value.accountNumber});
-      console.log(this.api);
+      //console.log(this.api);
+      this.router.navigate(['/confirm'], {state: {account: this.paymentForm.value.accountNumber, value: this.value}});
     }
     else
       this.invalidMessage = "Please fill all fields!"

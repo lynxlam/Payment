@@ -2,6 +2,7 @@
   <div class="col-sm" align="center">
     <img src="assets/img/ach.png" class="rounded" alt="Responsive image" style="width:50%">
     <br><br>
+    <p class="lead"><strong>Your Balance: ${{value}}</strong></p>
   </div>
   <p style="background-color: pink">{{invalidMessage}}</p>
   <form [formGroup]="paymentForm" (ngSubmit)="onSubmit(paymentForm)" novalidate>

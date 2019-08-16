@@ -15,6 +15,7 @@ export class UpiComponent implements OnInit {
   status = '';
   api = '';
   invalidMessage = '';
+  value = window.history.state.data;
 
   constructor(private _fb: FormBuilder, private router: Router) {}
 
@@ -33,11 +34,11 @@ export class UpiComponent implements OnInit {
     if (form.valid){
       let input = this.paymentForm.value.type;
       if (input == "email")
-        this.api = JSON.stringify({ "rtn": this.paymentForm.value.rtn, "email": this.paymentForm.value.alias});
+        this.api = JSON.stringify({ "rtn": this.paymentForm.value.rtn, "accountNumber":this.paymentForm.value.accountNumber, "email": this.paymentForm.value.alias});
       else if (input == "phone")
-        this.api = JSON.stringify({ "rtn": this.paymentForm.value.rtn, "phone": this.paymentForm.value.alias});
-      this.router.navigate(['/confirm']);
-      console.log(this.api);
+        this.api = JSON.stringify({ "rtn": this.paymentForm.value.rtn, "accountNumber":this.paymentForm.value.accountNumber, "phone": this.paymentForm.value.alias});
+      this.router.navigate(['/confirm'], {state: {account: this.paymentForm.value.accountNumber, value: this.value}});
+      //console.log(this.api);
     }
     else
       this.invalidMessage = "Please fill all fields!"

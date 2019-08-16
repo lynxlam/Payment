@@ -12,7 +12,8 @@ export class PaypalComponent implements AfterViewChecked {
   addScript: boolean = false;
   paypalLoad: boolean = true;
 
-  finalAmount: number = 0.1;
+  value = window.history.state.data;
+
 
   paypalConfig = {
     env: 'sandbox',
@@ -25,7 +26,7 @@ export class PaypalComponent implements AfterViewChecked {
       return actions.payment.create({
         payment: {
           transactions: [
-            { amount: { total: this.finalAmount, currency: 'USD' } }
+            { amount: { total: this.value, currency: 'USD' } }
           ]
         }
       });

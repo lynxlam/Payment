@@ -14,6 +14,7 @@ export class CardsComponent implements OnInit {
   status = '';
   api = '';
   invalidMessage = '';
+  value = window.history.state.data;
 
   constructor(private _fb: FormBuilder, private router: Router) {}
 
@@ -21,9 +22,13 @@ export class CardsComponent implements OnInit {
 
     this.paymentForm = new FormGroup({
       name: new FormControl('', Validators.required),
-      creditCard: new FormControl('', <any>CreditCardValidator.validateCCNumber),
-      expirationDate: new FormControl('', <any>CreditCardValidator.validateExpDate),
-      cvc: new FormControl('', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(4)]))
+      creditCard: new FormControl('', Validators.required),
+      expirationDate: new FormControl('', Validators.required),
+      cvc: new FormControl('', Validators.required)
+    //---Validate Real Card Number---
+      // creditCard: new FormControl('', <any>CreditCardValidator.validateCCNumber),
+      // expirationDate: new FormControl('', <any>CreditCardValidator.validateExpDate),
+      // cvc: new FormControl('', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(4)]))
     })
   }
 
@@ -33,10 +38,11 @@ export class CardsComponent implements OnInit {
     if (form.status == "VALID" && form.valid) {
       this.api = JSON.stringify({ "name": this.paymentForm.value.name, "cardNumber": this.paymentForm.value.creditCard,
         "expirationDate": this.paymentForm.value.expirationDate, "cvc": this.paymentForm.value.cvc});
-      this.router.navigate(['/confirm']);
+      this.router.navigate(['/confirm'], {state: {account: this.paymentForm.value.creditCard, value: this.value}});
+
     }
     else
         this.invalidMessage = "Invalid Card Info. Please Check Again!"
-    console.log(this.api);
+    //console.log(this.api);
   }
 }

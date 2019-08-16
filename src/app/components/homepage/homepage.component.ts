@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  randomBalance = (Math.floor(Math.random() * 1000000) + 1).toLocaleString();
 
-  ngOnInit() {
+  constructor(private router: Router) { }
+
+  ngOnInit() { }
+
+  goToSelectedMethod(page) {
+    this.router.navigate(['/', page], {state: {data: this.randomBalance}});
   }
 
 }

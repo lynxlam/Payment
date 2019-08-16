@@ -1,31 +1,35 @@
+<div class="jumbotron text-xs-center" align="center">
+  <p class="lead"><strong>You have got money!</strong></p>
+  <h1 class="display-3">${{randomBalance}}</h1>
+</div>
 <div class="container">
   <h3 align="center">Select a Payment Method</h3>
   <hr>
   <div class="row" align="center">
     <div class="col-sm">
-      <img src="assets/img/paypal.png" class="rounded" alt="Responsive image" style="width:75%" routerLink="/paypal">
+      <img src="assets/img/paypal.png" class="rounded" alt="Responsive image" style="width:75%" (click)="goToSelectedMethod('paypal')">
       <br><br>
     </div>
     <div class="col-sm">
-      <img src="assets/img/cards.png" class="rounded" alt="Responsive image" style="width:75%" routerLink="/cards">
+      <img src="assets/img/cards.png" class="rounded" alt="Responsive image" style="width:75%" (click)="goToSelectedMethod('cards')">
       <br><br>
     </div>
     <div class="col-sm">
-      <img src="assets/img/zelle.png" class="rounded" alt="Responsive image" style="width:75%" routerLink="/zelle">
+      <img src="assets/img/zelle.png" class="rounded" alt="Responsive image" style="width:75%" (click)="goToSelectedMethod('zelle')">
       <br><br>
     </div>
   </div>
   <div class="row" align="center">
     <div class="col-sm">
-      <img src="assets/img/ach.png" class="rounded" alt="Responsive image" style="width:75%" routerLink="/ach">
+      <img src="assets/img/ach.png" class="rounded" alt="Responsive image" style="width:75%" (click)="goToSelectedMethod('ach')">
       <br><br>
     </div>
     <div class="col-sm">
-      <img src="assets/img/rtp.jpg" class="rounded" alt="Responsive image" style="width:75%" routerLink="/rtp">
+      <img src="assets/img/rtp.jpg" class="rounded" alt="Responsive image" style="width:75%" (click)="goToSelectedMethod('rtp')">
       <br><br>
     </div>
     <div class="col-sm">
-      <img src="assets/img/upi.png" class="rounded" alt="Responsive image" style="width:75%" routerLink="/upi">
+      <img src="assets/img/upi.png" class="rounded" alt="Responsive image" style="width:75%" (click)="goToSelectedMethod('upi')">
       <br><br>
     </div>
   </div>
