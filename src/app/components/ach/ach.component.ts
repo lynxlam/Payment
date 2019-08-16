@@ -1,3 +1,12 @@
+/**
+* The Payment Portal implements an application that
+* allows user to choose a payment method from the
+* following options: PayPal, Cards, Zelle, ACH, RTP, UPI
+*
+* @author  Linh Lam
+* @version 1.0
+* @since   2019-08-16
+*/
 import { Component, OnInit } from '@angular/core';
 import { CreditCardValidator } from 'angular-cc-library';
 import { FormsModule, ReactiveFormsModule , FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';

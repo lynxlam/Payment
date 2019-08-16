@@ -2,7 +2,8 @@
   <div class="col-sm" align="center">
     <img src="assets/img/upi.png" class="rounded" alt="Responsive image" style="width:50%">
     <br><br>
-    <p class="lead"><strong>Your Balance: ${{value}}</strong></p>
+    <p class="lead"><strong>Amount: </strong></p>
+    <h5 class="display-4">${{value}}</h5>
   </div>
   <p style="background-color: pink">{{invalidMessage}}</p>
   <form [formGroup]="paymentForm" (ngSubmit)="onSubmit(paymentForm)" novalidate>
@@ -17,7 +18,7 @@
     <div class="form-group">
       <label>Alias</label><br>
         <div class="input-group ">
-          <select class="input-group-addon form-control col-4" id="type" formControlName="type" autocomplete="type" type>
+          <select class="input-group-addon form-control col-4" style="background-color: #ecf0f1" id="type" formControlName="type" autocomplete="type" type>
             <option value="" disabled selected>Choose...</option>
             <option value="email">Email</option>
             <option value="phone">Phone</option>
