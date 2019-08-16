@@ -25,6 +25,10 @@ export class AuthenticateComponent implements OnInit {
   api = '';
   invalidMessage = '';
   value = window.history.state.data;
+  randomBalance = ((Math.floor(Math.random() * 1000000) + 1 + Math.random())
+    .toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2}));
 
   constructor(private _fb: FormBuilder, private router: Router) {}
 
@@ -35,15 +39,16 @@ export class AuthenticateComponent implements OnInit {
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      phone: new FormControl('', Validators.required)
+      phone: new FormControl('', Validators.required),
+      alias: new FormControl('', Validators.required),
+      type: new FormControl('', Validators.required)
     })
   }
 
   onSubmit(form) {
     this.submitted = true;
-      if (this.authForm.value.firstName == 'Brandon' && this.authForm.value.lastName == 'Castagna'
-        && this.authForm.value.email == 'bc@bofa.com' && this.authForm.value.phone == '123-456-7890')
-          this.router.navigate(['/home'], {state: {}});
+      if (this.authForm.value.firstName == 'Brandon' && this.authForm.value.lastName == 'Castagna')
+          this.router.navigate(['/home'], {state: {value: this.randomBalance}});
       else
         this.invalidMessage = "Invalid Info. Please Check Again!"
     //console.log(this.api);

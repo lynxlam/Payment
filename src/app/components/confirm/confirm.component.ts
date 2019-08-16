@@ -9,6 +9,7 @@
 */
 
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-confirm',
@@ -18,11 +19,15 @@ import { Component, OnInit } from '@angular/core';
 export class ConfirmComponent implements OnInit {
   balance = window.history.state.value;
   account = window.history.state.account;
-  constructor() { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
     //console.log(this.balance);
     //console.log(this.account);
+  }
+
+  cancel(){
+    this.router.navigate(['/home'], {state: {value: this.balance}});
   }
 
 }

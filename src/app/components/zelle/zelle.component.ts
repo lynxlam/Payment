@@ -50,4 +50,8 @@ export class ZelleComponent implements OnInit {
       this.invalidMessage = "Please fill all fields!"
   }
 
+  cancel(){
+    this.router.navigate(['/home'], {state: {value: this.value}});
+  }
+
 }

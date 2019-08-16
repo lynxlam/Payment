@@ -55,4 +55,8 @@ export class CardsComponent implements OnInit {
         this.invalidMessage = "Invalid Card Info. Please Check Again!"
     //console.log(this.api);
   }
+
+  cancel(){
+    this.router.navigate(['/home'], {state: {value: this.value}});
+  }
 }

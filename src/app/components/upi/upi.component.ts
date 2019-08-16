@@ -54,4 +54,8 @@ export class UpiComponent implements OnInit {
       this.invalidMessage = "Please fill all fields!"
   }
 
+  cancel(){
+    this.router.navigate(['/home'], {state: {value: this.value}});
+  }
+
 }

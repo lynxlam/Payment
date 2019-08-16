@@ -9,6 +9,7 @@
 */
 
 import { Component, AfterViewChecked } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 declare let paypal: any;
 
@@ -18,6 +19,8 @@ declare let paypal: any;
   styleUrls: ['../../app.component.css']
 })
 export class PaypalComponent implements AfterViewChecked {
+
+  constructor(private router: Router) {}
 
   addScript: boolean = false;
   paypalLoad: boolean = true;
@@ -72,6 +75,10 @@ export class PaypalComponent implements AfterViewChecked {
       scripttagElement.onload = resolve;
       document.body.appendChild(scripttagElement);
     })
+  }
+
+  cancel(){
+    this.router.navigate(['/home'], {state: {value: this.value}});
   }
 
 }

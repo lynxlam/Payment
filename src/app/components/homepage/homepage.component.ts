@@ -17,10 +17,7 @@ import { Router } from '@angular/router';
   styleUrls: ['../../app.component.css']
 })
 export class HomepageComponent implements OnInit {
-  randomBalance = ((Math.floor(Math.random() * 1000000) + 1 + Math.random())
-    .toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2}));
+  randomBalance = window.history.state.value;
 
   constructor(private router: Router) { }
 
