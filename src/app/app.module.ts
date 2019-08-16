@@ -23,6 +23,7 @@ import { PaypalComponent } from './components/paypal/paypal.component';
 import { RtpComponent } from './components/rtp/rtp.component';
 import { UpiComponent } from './components/upi/upi.component';
 import { ZelleComponent } from './components/zelle/zelle.component';
+import { AuthenticateComponent } from './components/authenticate/authenticate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { ZelleComponent } from './components/zelle/zelle.component';
     PaypalComponent,
     RtpComponent,
     UpiComponent,
-    ZelleComponent
+    ZelleComponent,
+    AuthenticateComponent
   ],
   imports: [
     BrowserModule,

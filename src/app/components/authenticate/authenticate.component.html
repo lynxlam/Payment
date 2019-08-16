@@ -1,0 +1,29 @@
+<div class="container">
+  <h3 align="center">Verify your Details</h3>
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm)" novalidate>
+    <p style="background-color: pink">{{invalidMessage}}</p>
+    <div class="form-group">
+      <label>Payment ID</label><br>
+      <input class="form-control" id="paymentID" formControlName="paymentID" type="text" autocomplete="paymentID" paymentID/>
+    </div>
+    <div class="form-group">
+      <label>First Name</label><br>
+      <input class="form-control" id="firstName" formControlName="firstName" placeholder="Brandon" type="text" autocomplete="firstName" firstName/>
+    </div>
+    <div class="form-group">
+      <label>Last Name</label><br>
+      <input class="form-control" id="lastName" formControlName="lastName" placeholder="Castagna" type="text" autocomplete="lastName" lastName/>
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label><br>
+      <input class="form-control" id="phone" formControlName="phone" placeholder="123-456-7890" type="tel" autocomplete="phone" phone/>
+    </div>
+    <div class="form-group">
+      <label>Email</label><br>
+      <input class="form-control" id="email" formControlName="email" type="tel" placeholder="bc@bofa.com" autocomplete="email" email/>
+    </div>
+    <div align="center">
+      <button type="submit" class="btn btn-primary">Confirm</button>
+    </div>
+  </form>
+</div>

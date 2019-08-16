@@ -18,6 +18,7 @@ import { PaypalComponent } from './components/paypal/paypal.component';
 import { RtpComponent } from './components/rtp/rtp.component';
 import { UpiComponent } from './components/upi/upi.component';
 import { ZelleComponent } from './components/zelle/zelle.component';
+import { AuthenticateComponent } from './components/authenticate/authenticate.component';
 
 
 //import { CallbackComponent } from './components/callback/callback.component';
@@ -25,8 +26,12 @@ import { ZelleComponent } from './components/zelle/zelle.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomepageComponent
+  },
+  {
+    path: '',
+    component: AuthenticateComponent
   },
   {
     path: 'ach',
